@@ -3,33 +3,33 @@ import { FAQ } from "@/types/faq";
 const faqData: FAQ[] = [
   {
     id: 74,
-    question: "What Is AI Tool Content Writing Tool?",
+    question: "What's included in a typical project?",
     answer:
-      "Build SaaS AI applications using OpenAI and Next.js, this kit comes with pre-configured and pre-built examples, making it easier to quickly kickstart your AI startup.",
+      "Every project includes a discovery call to scope requirements, custom design and development, responsive layouts, and deployment. Larger packages add CMS integration, authentication, and API work as needed.",
   },
   {
     id: 100,
-    question: "Is there a limit on how much content I can generate?",
+    question: "How long does a project take?",
     answer:
-      "Build SaaS AI applications using OpenAI and Next.js, this kit comes with pre-configured and pre-built examples, making it easier to quickly kickstart your AI startup.",
+      "A landing page typically takes about 2 weeks, a full business website around 4 weeks, and custom web applications are scoped individually after a discovery call based on complexity.",
   },
   {
     id: 7,
-    question: "Is it helpful for Digital Marketer or Content Writer?",
+    question: "What technologies do you work with?",
     answer:
-      "Build SaaS AI applications using OpenAI and Next.js, this kit comes with pre-configured and pre-built examples, making it easier to quickly kickstart your AI startup.",
+      "I build primarily with React, Next.js, TypeScript, and Tailwind CSS on the frontend, and Node.js with SQL/NoSQL databases on the backend, integrating third-party APIs and services as needed.",
   },
   {
     id: 67,
-    question: "What Languages does it supports?",
+    question: "Do you offer support after launch?",
     answer:
-      "Build SaaS AI applications using OpenAI and Next.js, this kit comes with pre-configured and pre-built examples, making it easier to quickly kickstart your AI startup.",
+      "Yes, ongoing support and maintenance is available after launch, covering bug fixes, small feature additions, and content updates on a retainer or as-needed basis.",
   },
   {
     id: 9,
-    question: "What is SEO Writing AI and how do I use it?",
+    question: "How does pricing and payment work?",
     answer:
-      "Build SaaS AI applications using OpenAI and Next.js, this kit comes with pre-configured and pre-built examples, making it easier to quickly kickstart your AI startup.",
+      "Packages above are starting prices for typical scopes. After a quick discovery call, I'll send a fixed-price quote based on your specific requirements, with payment split across project milestones.",
   },
 ];
 

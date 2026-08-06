@@ -1,6 +1,33 @@
-import NextAuth from "next-auth/next";
-import { authOptions } from "@/libs/auth";
+import { NextResponse } from "next/server";
 
-const handler = NextAuth(authOptions);
+const authIsConfigured = Boolean(
+  process.env.NEXTAUTH_URL || process.env.NEXTAUTH_SECRET || process.env.SECRET,
+);
 
-export { handler as GET, handler as POST };
+export async function GET(req: Request) {
+  if (!authIsConfigured) {
+    return NextResponse.json(
+      { message: "Auth is disabled in this project." },
+      { status: 503 },
+    );
+  }
+
+  const { default: NextAuth } = await import("next-auth");
+  const { authOptions } = await import("@/libs/auth");
+  const handler = NextAuth(authOptions);
+  return handler(req);
+}
+
+export async function POST(req: Request) {
+  if (!authIsConfigured) {
+    return NextResponse.json(
+      { message: "Auth is disabled in this project." },
+      { status: 503 },
+    );
+  }
+
+  const { default: NextAuth } = await import("next-auth");
+  const { authOptions } = await import("@/libs/auth");
+  const handler = NextAuth(authOptions);
+  return handler(req);
+}

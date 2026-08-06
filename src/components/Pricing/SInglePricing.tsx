@@ -1,35 +1,8 @@
-"use client";
-
-import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 import OfferItem from "./OfferItem";
-import { integrations, messages } from "../../../integrations.config";
-import toast from "react-hot-toast";
 
 const SinglePricing = ({ price }: any) => {
-  // POST request
-  const handleSubscription = async (e: any) => {
-    e.preventDefault();
-
-    if (!integrations?.isStripeEnabled) {
-      toast.error(messages.stripe);
-      return;
-    }
-
-    const { data } = await axios.post(
-      "/api/payment",
-      {
-        priceId: price.id,
-      },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      },
-    );
-    window.location.assign(data);
-  };
-
   return (
     <div className="wow fadeInUp pricing-item-border relative z-20 overflow-hidden rounded-3xl bg-dark px-8 pb-10 pt-12.5 xl:px-10">
       <span className="absolute right-9 top-9">
@@ -48,9 +21,9 @@ const SinglePricing = ({ price }: any) => {
       </span>
 
       <h3 className="mb-5.5 text-heading-6 font-semibold text-white">
-        {price.nickname === "Small" && "Starter"}
-        {price.nickname === "Medium" && "Medium"}
-        {price.nickname === "Large" && "Business"}
+        {price.nickname === "Small" && "Landing Page"}
+        {price.nickname === "Medium" && "Business Website"}
+        {price.nickname === "Large" && "Web Application"}
       </h3>
 
       <div className="flex items-center gap-3.5">
@@ -62,8 +35,9 @@ const SinglePricing = ({ price }: any) => {
         </h2>
 
         <p className="font-medium">
-          /month <br />
-          (billed annually)
+          starting at
+          <br />
+          one-time fee
         </p>
       </div>
 
@@ -71,42 +45,42 @@ const SinglePricing = ({ price }: any) => {
 
       {price.nickname === "Small" && (
         <ul className="flex flex-col gap-4">
-          <OfferItem text="Subscription with levels" />
-          <OfferItem text="Advanced features included" />
-          <OfferItem text="Shared workspaces & tools" />
-          <OfferItem text="Premium versions functionality" />
-          <OfferItem text="Customizing the outputs" />
-          <OfferItem text="Priority customer support" />
+          <OfferItem text="Single-page responsive site" />
+          <OfferItem text="Custom UI built with React/Next.js" />
+          <OfferItem text="Contact form & basic SEO" />
+          <OfferItem text="Deployment & domain setup" />
+          <OfferItem text="1 round of revisions" />
+          <OfferItem text="~2 week delivery" />
         </ul>
       )}
 
       {price.nickname === "Medium" && (
         <ul className="flex flex-col gap-4">
-          <OfferItem text="Subscription with levels" />
-          <OfferItem text="Advanced features included" />
-          <OfferItem text="Shared workspaces & tools" />
-          <OfferItem text="Premium versions functionality" />
-          <OfferItem text="Customizing the outputs" />
-          <OfferItem text="Priority customer support" />
+          <OfferItem text="Multi-page marketing website" />
+          <OfferItem text="CMS integration for easy content edits" />
+          <OfferItem text="SEO, analytics & performance tuning" />
+          <OfferItem text="Responsive design, all devices" />
+          <OfferItem text="3 rounds of revisions" />
+          <OfferItem text="~4 week delivery" />
         </ul>
       )}
       {price.nickname === "Large" && (
         <ul className="flex flex-col gap-4">
-          <OfferItem text="Subscription with levels" />
-          <OfferItem text="Advanced features included" />
-          <OfferItem text="Shared workspaces & tools" />
-          <OfferItem text="Premium versions functionality" />
-          <OfferItem text="Customizing the outputs" />
-          <OfferItem text="Priority customer support" />
+          <OfferItem text="Custom web application" />
+          <OfferItem text="Authentication, database & APIs" />
+          <OfferItem text="Admin dashboard / user accounts" />
+          <OfferItem text="Third-party integrations" />
+          <OfferItem text="Ongoing support available" />
+          <OfferItem text="Scoped timeline after discovery call" />
         </ul>
       )}
 
-      <button
-        aria-label="Get the plan button"
-        onClick={handleSubscription}
+      <Link
+        href="/#contact"
+        aria-label="Start a project"
         className="pricing-button-gradient relative mt-11 flex w-full items-center justify-center gap-1.5 rounded-lg p-3 font-medium text-white transition-all duration-300 ease-in-out hover:shadow-button"
       >
-        Get the plan
+        Start a Project
         <svg
           width="17"
           height="16"
@@ -119,9 +93,9 @@ const SinglePricing = ({ price }: any) => {
             fill="white"
           />
         </svg>
-      </button>
+      </Link>
 
-      <p className="mt-4 text-center text-sm">No extra hidden charge</p>
+      <p className="mt-4 text-center text-sm">Fixed-price quote, no hidden fees</p>
 
       {/* <!-- bg shapes --> */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">

@@ -1,5 +1,85 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+
+.site-shell {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f9 45%, #e7ecf5 100%);
+  transition: background 0.3s ease;
+}
+
+.dark .site-shell {
+  background:
+    radial-gradient(circle at top, rgba(127, 29, 29, 0.28), transparent 32%),
+    radial-gradient(circle at 80% 20%, rgba(88, 28, 135, 0.3), transparent 30%),
+    radial-gradient(circle at 15% 85%, rgba(120, 53, 15, 0.14), transparent 35%),
+    linear-gradient(180deg, #050004 0%, #0c0509 45%, #100810 100%);
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0;
+  animation: drift 18s ease-in-out infinite alternate;
+  transition: opacity 0.3s ease;
+}
+
+.dark .ambient-orb {
+  opacity: 0.55;
+}
+
+.ambient-orb-1 {
+  top: 8%;
+  left: 6%;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(153, 27, 27, 0.3);
+}
+
+.ambient-orb-2 {
+  top: 24%;
+  right: 10%;
+  width: 22rem;
+  height: 22rem;
+  background: rgba(107, 33, 168, 0.32);
+  animation-delay: 3s;
+}
+
+.ambient-orb-3 {
+  bottom: 8%;
+  left: 38%;
+  width: 16rem;
+  height: 16rem;
+  background: rgba(180, 140, 40, 0.2);
+  animation-delay: 6s;
+}
+
+.grid-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background-image:
+    linear-gradient(rgba(180, 140, 60, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(180, 140, 60, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
+  transition: opacity 0.3s ease;
+}
+
+.dark .grid-pattern {
+  opacity: 1;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(24px, -18px, 0) scale(1.15);
+  }
+}
 
 @theme {
   --font-*: initial;

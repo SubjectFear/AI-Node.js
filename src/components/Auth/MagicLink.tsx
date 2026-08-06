@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { validateEmail } from "@/libs/validateEmail";
-import { signIn } from "next-auth/react";
 import Loader from "../Common/Loader";
 import { integrations, messages } from "../../../integrations.config";
 import z from "zod";
@@ -14,7 +13,7 @@ const MagicLink = () => {
   const [email, setEmail] = useState("");
   const [loader, setLoader] = useState(false);
 
-  const loginUser = (e: any) => {
+  const loginUser = async (e: any) => {
     e.preventDefault();
 
     if (!integrations?.isAuthEnabled) {
@@ -35,22 +34,23 @@ const MagicLink = () => {
       setLoader(false);
       toast.error("Please enter a valid email address.");
       return;
-    } else {
-      signIn("email", {
+    }
+
+    try {
+      const { signIn } = await import("next-auth/react");
+      const callback = await signIn("email", {
         redirect: false,
         email: email,
-      })
-        .then((callback) => {
-          if (callback?.ok) {
-            toast.success("Email sent");
-            setEmail("");
-            setLoader(false);
-          }
-        })
-        .catch((error) => {
-          toast.error(error);
-          setLoader(false);
-        });
+      });
+
+      if (callback?.ok) {
+        toast.success("Email sent");
+        setEmail("");
+      }
+    } catch (error: any) {
+      toast.error(error?.message || "Unable to sign in");
+    } finally {
+      setLoader(false);
     }
   };
 

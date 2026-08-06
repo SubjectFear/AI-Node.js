@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const Breadcrumb = ({ pageTitle }: { pageTitle: string }) => {
   return (
-    <section className="relative z-10 pb-18 pt-30 lg:pt-35 xl:pt-40">
-      <div className="absolute left-0 top-25 -z-1 flex w-full flex-col gap-3 opacity-50">
+    <section className="relative z-10 pb-18 pt-12 lg:pt-14 xl:pt-16">
+      <div className="absolute left-0 top-8 -z-1 flex w-full flex-col gap-3 opacity-50">
         <div className="footer-bg-gradient h-[1.24px] w-full"></div>
         <div className="footer-bg-gradient h-[2.47px] w-full"></div>
         <div className="footer-bg-gradient h-[3.71px] w-full"></div>
@@ -14,10 +14,10 @@ const Breadcrumb = ({ pageTitle }: { pageTitle: string }) => {
         <div className="footer-bg-gradient h-[9.90px] w-full"></div>
         <div className="footer-bg-gradient h-[13px] w-full"></div>
       </div>
-      <div className="absolute bottom-0 left-0 -z-1 h-24 w-full bg-linear-to-b from-dark/0 to-dark"></div>
+      <div className="absolute bottom-0 left-0 -z-1 h-24 w-full bg-linear-to-b from-white/0 to-white dark:from-dark/0 dark:to-dark"></div>
 
       <div className="px-4 text-center">
-        <h1 className="mb-5.5 text-heading-2 font-extrabold text-white">
+        <h1 className="mb-5.5 text-heading-2 font-extrabold text-slate-900 dark:text-white">
           {pageTitle}
         </h1>
         <ul className="flex items-center justify-center gap-2">

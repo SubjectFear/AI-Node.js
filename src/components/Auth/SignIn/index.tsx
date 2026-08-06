@@ -1,5 +1,4 @@
 "use client";
-import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -55,19 +54,27 @@ const Signin = () => {
     }
 
     setLoader(true);
-    signIn("credentials", { ...data, redirect: false }).then((callback) => {
+
+    try {
+      const { signIn } = await import("next-auth/react");
+      const callback = await signIn("credentials", {
+        ...data,
+        redirect: false,
+      });
+
       if (callback?.error) {
         toast.error(callback.error);
-        setLoader(false);
         return;
       }
 
       if (callback?.ok && !callback?.error) {
         toast.success("Logged in successfully");
-        setLoader(false);
-        return;
       }
-    });
+    } catch (error: any) {
+      toast.error(error?.message || "Unable to sign in");
+    } finally {
+      setLoader(false);
+    }
   };
   return (
     <>

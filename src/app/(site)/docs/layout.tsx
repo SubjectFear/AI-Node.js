@@ -6,8 +6,8 @@ export default async function DocsLayout({ children }: PropsWithChildren) {
   const posts = getAllPosts(["title", "date", "excerpt", "coverImage", "slug"]);
 
   return (
-    <div className='mx-auto grid max-w-[1170px] gap-x-8 gap-y-4 pt-24 pb-16 md:pt-28 md:pb-20 lg:grid-cols-[auto_1fr] lg:pt-32 lg:pb-24'>
-      <aside className='max-h-fit rounded-lg bg-white/5 p-4 lg:sticky lg:top-[80px]'>
+    <div className='mx-auto grid max-w-[1170px] gap-x-8 gap-y-4 pt-8 pb-16 md:pt-10 md:pb-20 lg:grid-cols-[auto_1fr] lg:pt-12 lg:pb-24'>
+      <aside className='max-h-fit rounded-lg bg-white/5 p-4 lg:sticky lg:top-4'>
         <nav>
           <ul className='space-y-2'>
             {posts.map((post, key) => (

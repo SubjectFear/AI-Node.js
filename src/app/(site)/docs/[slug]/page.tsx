@@ -7,14 +7,20 @@ type Props = {
 
 export async function generateMetadata(props: Props) {
   const params = await props.params;
-  const post = getPostBySlug(params.slug, ['title', 'author', 'content']);
+  const post = getPostBySlug(params.slug, ['title', 'author', 'description', 'content']);
   const siteName = process.env.SITE_NAME;
   const authorName = process.env.AUTHOR_NAME;
 
   if (post) {
+    const descriptionText =
+      post.description ||
+      (typeof post.content === 'string'
+        ? post.content.replace(/\s+/g, ' ').trim().slice(0, 136)
+        : '');
+
     return {
       title: `${post.title || 'Single Post Page'} | ${siteName}`,
-      description: `${post.metadata?.slice(0, 136)}...`,
+      description: descriptionText ? `${descriptionText.slice(0, 136)}${descriptionText.length > 136 ? '...' : ''}` : 'Documentation article',
       author: authorName,
 
       robots: {

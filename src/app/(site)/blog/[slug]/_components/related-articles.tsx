@@ -1,19 +1,14 @@
-import SingleBlog from '@/components/Blog/SingleBlog';
-import { getPosts } from '@/sanity/sanity-utils';
-
 export async function RelatedArticles() {
-  const posts = await getPosts();
-
   return (
     <section>
-      <h2 className='mt-25 mb-10 max-w-[579px] text-[34px] leading-[45px] font-semibold text-white'>
+      <h2 className="mb-10 mt-25 max-w-[579px] text-[34px] leading-[45px] font-semibold text-white">
         Related Articles
       </h2>
 
-      <div className='grid grid-cols-1 gap-7.5 sm:grid-cols-2 lg:grid-cols-3'>
-        {posts.slice(0, 3).map((blog, i) => (
-          <SingleBlog key={blog._id || i} blog={blog} />
-        ))}
+      <div className="grid grid-cols-1 gap-7.5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-sm text-white/80">
+          Related content is disabled because the blog CMS was removed.
+        </div>
       </div>
     </section>
   );

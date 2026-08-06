@@ -1,24 +1,15 @@
 const integrations = {
-  isSanityEnabled: true,
+  isBlogEnabled: false,
   isStripeEnabled: true,
   isOpenAIEnabled: true,
   isMailchimpEnabled: true,
-  isAuthEnabled: true,
+  isAuthEnabled: false,
 };
 
 const messages = {
-  sanity: (
+  blog: (
     <div style={{ whiteSpace: "pre-wrap" }}>
-      Sanity is not enabled. Follow the{" "}
-      <a
-        href="https://nextjstemplates.com/docs/enableintegration"
-        className="text-primary underline"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        documentation
-      </a>{" "}
-      to enable it.
+      Blog content is not enabled in this template.
     </div>
   ),
   stripe: (

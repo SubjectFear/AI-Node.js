@@ -14,110 +14,35 @@ const menuData: Menu[] = [
     path: "/about",
   },
   {
-    id: 4,
-    title: "Blog",
+    id: 3,
+    title: "Experience",
     newTab: false,
-    path: "/blog",
+    path: "/#experience",
   },
   {
-    id: 3,
-    title: "Docs",
+    id: 4,
+    title: "Projects",
     newTab: false,
-    path: "/docs",
+    path: "/#featured-projects",
   },
   {
     id: 5,
-    title: "Pages",
+    title: "Stack",
     newTab: false,
-    submenu: [
-      {
-        id: 301,
-        title: "About Page",
-        newTab: false,
-        path: "/about",
-      },
-      {
-        id: 391,
-        title: "Pricing",
-        newTab: false,
-        path: "/pricing",
-      },
-      {
-        id: 31,
-        title: "Blog Grid",
-        newTab: false,
-        path: "/blog",
-      },
-      {
-        id: 34,
-        title: "Sign In",
-        newTab: false,
-        path: "/auth/signin",
-      },
-      {
-        id: 35,
-        title: "Sign Up",
-        newTab: false,
-        path: "/auth/signup",
-      },
-      {
-        id: 35,
-        title: "Docs",
-        newTab: false,
-        path: "/docs",
-      },
-      {
-        id: 36,
-        title: "404",
-        newTab: false,
-        path: "/error",
-      },
-    ],
+    path: "/#stack",
   },
-
   {
     id: 6,
-    title: "OpenAI Examples",
+    title: "Pricing",
     newTab: false,
-    path: "/ai-examples",
-    submenu: [
-      {
-        id: 66,
-        title: "Content Writing Tool",
-        newTab: false,
-        path: "/ai-examples/content-writing-tool",
-      },
-      {
-        id: 67,
-        title: "Business Name Generator",
-        newTab: false,
-        path: "/ai-examples/business-name-generator",
-      },
-      {
-        id: 69,
-        title: "Product Name Generator",
-        newTab: false,
-        path: "/ai-examples/product-name-generator",
-      },
-      {
-        id: 68,
-        title: "Article Title Generator",
-        newTab: false,
-        path: "/ai-examples/article-title-generator",
-      },
-      {
-        id: 70,
-        title: "Spreadsheet Generator",
-        newTab: false,
-        path: "/ai-examples/spreadsheet-generator",
-      },
-      {
-        id: 71,
-        title: "Interview Question Generator",
-        newTab: false,
-        path: "/ai-examples/interview-question-generator",
-      },
-    ],
+    path: "/pricing",
+  },
+  {
+    id: 7,
+    title: "Contact",
+    newTab: false,
+    path: "/#contact",
   },
 ];
+
 export default menuData;

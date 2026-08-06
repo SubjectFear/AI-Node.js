@@ -1,11 +1,16 @@
 import React from "react";
-import { signIn } from "next-auth/react";
 
 const SocialSignup = () => {
+  const handleSocialSignIn = async (provider: "google" | "github") => {
+    const { signIn } = await import("next-auth/react");
+    return signIn(provider);
+  };
+
   return (
     <>
       <button
-        onClick={() => signIn("google")}
+        type="button"
+        onClick={() => handleSocialSignIn("google")}
         className="flex w-full items-center justify-center gap-3 rounded-lg border border-white/[0.12] p-3.5 font-medium text-white duration-300 ease-in hover:border-purple"
       >
         <svg
@@ -48,7 +53,8 @@ const SocialSignup = () => {
       </button>
 
       <button
-        onClick={() => signIn("github")}
+        type="button"
+        onClick={() => handleSocialSignIn("github")}
         className="mt-4 flex w-full items-center justify-center gap-3 rounded-lg border border-white/[0.12] p-3.5 font-medium text-white duration-300 ease-in hover:border-purple"
       >
         <svg
