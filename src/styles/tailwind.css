@@ -348,6 +348,25 @@
   -webkit-text-fill-color: transparent;
 }
 
+/* darker subtitle variant for light-mode readability on the Pricing/Faq section titles */
+@utility section-subtitle-text {
+  background: -webkit-linear-gradient(90deg, #7c3aed 0.01%, #9333ea 50.01%, #6d28d9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .section-subtitle-text {
+  background:
+    -webkit-linear-gradient(90deg, #e59cff 0.01%, #ba9cff 50.01%, #9cb2ff 100%),
+    -webkit-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0.4)
+      );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @utility hero-button-gradient {
   box-shadow: 0px -3px 10px 0px #00000040 inset;
   background: linear-gradient(180deg, #a073ee -11.11%, #6e25ed 100%);

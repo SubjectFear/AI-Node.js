@@ -34,7 +34,7 @@ const SinglePricing = ({ price }: any) => {
           })}
         </h2>
 
-        <p className="font-medium">
+        <p className="font-medium text-white">
           starting at
           <br />
           one-time fee
@@ -95,7 +95,7 @@ const SinglePricing = ({ price }: any) => {
         </svg>
       </Link>
 
-      <p className="mt-4 text-center text-sm">Fixed-price quote, no hidden fees</p>
+      <p className="mt-4 text-center text-sm text-white">Fixed-price quote, no hidden fees</p>
 
       {/* <!-- bg shapes --> */}
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">

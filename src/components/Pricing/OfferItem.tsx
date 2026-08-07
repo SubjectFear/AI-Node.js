@@ -79,7 +79,7 @@ const OfferItem = ({ text }: { text: string }) => {
   return (
     <li className="flex items-center gap-5">
       {icon1}
-      <span className="font-medium">{text}</span>
+      <span className="font-medium text-white">{text}</span>
     </li>
   );
 };
